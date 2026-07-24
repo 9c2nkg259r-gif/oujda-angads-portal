@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aéroport Oujda-Angads | Vision 2030</title>
+    <!-- Tailwind CSS for rapid, modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow p-4 flex justify-between items-center">
+        <div class="font-bold text-xl text-blue-900">Oujda-Angads</div>
+        <div class="space-x-4 hidden md:flex">
+            <a href="#vols" class="hover:text-blue-600">Vols</a>
+            <a href="#marhaba" class="hover:text-blue-600">Marhaba</a>
+            <a href="#services" class="hover:text-blue-600">Services</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Main Welcome Area) -->
+    <header class="text-center py-20 bg-blue-50 border-b border-blue-100">
+        <p class="text-sm text-gray-500 uppercase tracking-widest">Airports of Morocco</p>
+        <h1 class="text-4xl font-bold mt-2">L'aéroport de l'Oriental, repensé pour vous.</h1>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Suivez vos vols en temps réel, naviguez dans le terminal, profitez de l'opération Marhaba.</p>
+    </header>
+
+    <!-- Flight Board Section (Perfect part to explain to the jury) -->
+    <section id="vols" class="p-8 max-w-5xl mx-auto">
+        <div class="flex justify-between items-end mb-6">
+            <h2 class="text-2xl font-bold">Tableau des vols aujourd'hui</h2>
+            <!-- This ID links to the JavaScript below -->
+            <div class="text-red-500 font-mono font-bold tracking-widest" id="live-clock">LIVE --:--:--</div>
+        </div>
+        
+        <div class="bg-white shadow rounded-lg overflow-hidden">
+            <!-- Flight Item 1: Ryanair -->
+            <div class="flex justify-between items-center p-4 border-b hover:bg-gray-50 transition">
+                <div>
+                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded font-bold">EN VOL</span>
+                    <span class="font-bold ml-3 text-gray-700">FR4042 (Ryanair)</span>
+                </div>
+                <div class="flex space-x-8 text-center items-center">
+                    <div>
+                        <div class="font-bold text-lg">06:00</div>
+                        <div class="text-sm text-gray-500">Oujda (OUD)</div>
+                    </div>
+                    <div class="text-blue-300 text-xl">✈</div>
+                    <div>
+                        <div class="font-bold text-lg">09:45</div>
+                        <div class="text-sm text-gray-500">Paris (BVA)</div>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div class="font-bold text-gray-700">Porte 1</div>
+                    <div class="text-green-600 text-sm font-semibold">À l'heure</div>
+                </div>
+            </div>
+
+            <!-- Flight Item 2: Air Arabia -->
+            <div class="flex justify-between items-center p-4 hover:bg-gray-50 transition">
+                <div>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded font-bold">EMBARQUEMENT</span>
+                    <span class="font-bold ml-3 text-gray-700">3O131 (Air Arabia)</span>
+                </div>
+                <div class="flex space-x-8 text-center items-center">
+                    <div>
+                        <div class="font-bold text-lg">07:15</div>
+                        <div class="text-sm text-gray-500">Oujda (OUD)</div>
+                    </div>
+                    <div class="text-blue-300 text-xl">✈</div>
+                    <div>
+                        <div class="font-bold text-lg">10:50</div>
+                        <div class="text-sm text-gray-500">Bruxelles (CRL)</div>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div class="font-bold text-gray-700">Porte 2</div>
+                    <div class="text-gray-500 text-sm font-semibold">En cours</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // This function creates the real-time clock for the flight board
+        function updateClock() {
+            const now = new Date();
+            // Format the time to look like HH:MM:SS
+            const timeString = now.toLocaleTimeString('fr-FR');
+            // Inject the time into the HTML element with the ID 'live-clock'
+            document.getElementById('live-clock').textContent = 'LIVE ' + timeString;
+        }
+        
+        // Run the function every 1000 milliseconds (1 second)
+        setInterval(updateClock, 1000);
+        // Run it once immediately so there's no delay on page load
+        updateClock();
+    </script>
+</body>
+</html>
