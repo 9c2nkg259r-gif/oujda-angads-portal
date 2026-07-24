@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vols | Aéroport Oujda-Angads</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    
+    <nav class="bg-white shadow p-4 flex justify-between items-center">
+        <div class="font-bold text-xl text-blue-900"><a href="index.html">Oujda-Angads</a></div>
+        <div class="space-x-4 hidden md:flex">
+            <a href="vols.html" class="text-blue-600 font-semibold">Vols</a>
+            <a href="marhaba.html" class="hover:text-blue-600">Marhaba</a>
+        </div>
+    </nav>
+
+    <section class="p-8 max-w-5xl mx-auto mt-8">
+        <div class="flex justify-between items-end mb-6">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900">Suivi des Vols</h1>
+                <p class="text-gray-500 mt-2">Dernière mise à jour automatique</p>
+            </div>
+            <div class="text-red-500 font-mono font-bold text-xl tracking-widest" id="live-clock">--:--:--</div>
+        </div>
+
+        <div class="bg-white p-6 shadow rounded-lg border-t-4 border-blue-900">
+            <div class="grid grid-cols-4 gap-4 text-sm text-gray-500 font-bold border-b pb-2 mb-4">
+                <div>VOL / COMPAGNIE</div>
+                <div>DÉPART</div>
+                <div>DESTINATION</div>
+                <div class="text-right">STATUT</div>
+            </div>
+            
+            <div class="grid grid-cols-4 gap-4 items-center py-3 border-b">
+                <div class="font-bold">AT812 <span class="text-gray-400 font-normal block">Royal Air Maroc</span></div>
+                <div class="font-mono text-lg">08:45</div>
+                <div>Casablanca (CMN)</div>
+                <div class="text-right text-green-600 font-bold">À l'heure</div>
+            </div>
+
+            <div class="grid grid-cols-4 gap-4 items-center py-3 border-b">
+                <div class="font-bold">FR4042 <span class="text-gray-400 font-normal block">Ryanair</span></div>
+                <div class="font-mono text-lg">06:00</div>
+                <div>Paris (BVA)</div>
+                <div class="text-right text-blue-600 font-bold">En Vol</div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
